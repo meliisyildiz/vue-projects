@@ -1,0 +1,47 @@
+{
+  "name": "to-do",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build",
+    "lint": "vue-cli-service lint"
+  },
+  "dependencies": {
+    "core-js": "^3.37.1",
+    "vue": "^3.4.0"
+  },
+  "devDependencies": {
+    "@babel/eslint-parser": "^7.25.9",
+    "@vue/cli-plugin-babel": "~5.0.0",
+    "@vue/cli-plugin-eslint": "~5.0.0",
+    "@vue/cli-service": "~5.0.0",
+    "eslint": "^8.57.0",
+    "eslint-plugin-vue": "^9.29.0",
+    "vue-eslint-parser": "^9.4.3"
+  },
+  "eslintConfig": {
+    "root": true,
+    "env": {
+      "node": true,
+      "browser": true,
+      "es2021": true
+    },
+    "extends": [
+      "eslint:recommended",
+      "plugin:vue/vue3-essential"
+    ],
+    "parser": "vue-eslint-parser",
+    "parserOptions": {
+      "parser": "@babel/eslint-parser",
+      "ecmaVersion": 2021,
+      "sourceType": "module",
+      "requireConfigFile": false
+    }
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not dead"
+  ]
+}
