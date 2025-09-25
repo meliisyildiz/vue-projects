@@ -1,0 +1,115 @@
+/* Global body styles */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  text-align: center;
+  padding: 20px;
+  background: linear-gradient(135deg, #f9f7f1, #ffe2e2, #ffefba);
+  background-size: 400% 400%;
+  animation: gradientShift 12s ease infinite;
+  color: #222;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Gradient animation */
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Headings */
+h1 {
+  font-size: 2.2rem;
+  color: #333;
+  margin-bottom: 10px;
+  text-shadow: 1px 1px 2px #fff;
+}
+
+h1 i {
+  margin-right: 8px;
+  color: #ff4f75;
+}
+
+p {
+  margin-bottom: 20px;
+  color: #555;
+  font-weight: 500;
+}
+
+/* Input fields */
+input[type="text"] {
+  padding: 8px 14px;
+  border: 2px solid #ccc;
+  border-radius: 12px;
+  font-size: 1rem;
+  outline: none;
+  transition: border 0.3s ease, box-shadow 0.3s ease;
+}
+
+input[type="text"]:focus {
+  border-color: #ff6f91;
+  box-shadow: 0 0 8px rgba(255,111,145,0.5);
+}
+
+/* Buttons */
+button {
+  margin-left: 5px;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 12px;
+  background: #ff6f91;
+  color: #fff;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: transform 0.2s ease, background 0.3s ease, box-shadow 0.3s ease;
+}
+
+button:hover {
+  background: #ff4f75;
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(255,111,145,0.4);
+}
+
+button i {
+  margin-right: 5px;
+}
+
+/* Pokémon images */
+img {
+  width: 150px;
+  height: 150px;
+  image-rendering: pixelated;
+  margin-top: 20px;
+  animation: popIn 0.5s ease;
+}
+
+/* Pop-in animation */
+@keyframes popIn {
+  0% { transform: scale(0.5); opacity: 0; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+/* Loader */
+.loader {
+  margin: 20px auto;
+  width: 50px;
+  height: 50px;
+  border: 4px solid #ff6f91;
+  border-top: 4px solid #fff;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Error messages */
+div[style*="color:red"] {
+  font-weight: bold;
+  font-size: 1rem;
+}
