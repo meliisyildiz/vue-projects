@@ -16,8 +16,8 @@
             pokemon.id
           }})</h2>
           <p>Type: <span v-for="t in pokemon.types" :key="t.type.name">{{ capitalize(t.type.name) }} </span></p>
-          <p>Height: {{ pokemon.height }} decimeters</p>
-          <p>Weight: {{ pokemon.weight }} hectograms</p>
+          <p>Height: {{ pokemon.height }} centimetres</p>
+          <p>Weight: {{ pokemon.weight }} kilograms</p>
           <p>Abilities: <span v-for="a in pokemon.abilities" :key="a.ability.name">{{ capitalize(a.ability.name) }} </span></p>
           <p>Can evolve: <strong>{{ canEvolve ? "Yes" : "No" }}</strong></p>
         </div>
