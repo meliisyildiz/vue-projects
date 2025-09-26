@@ -189,7 +189,7 @@ function capitalize(str) {
 
 <style scoped>
 .pokemon-details-container {
-  max-width: 800px;
+  max-width: 600px;
   margin: 0 auto;
   padding: 20px;
   animation: fadeIn 0.6s ease;
@@ -238,7 +238,7 @@ function capitalize(str) {
   margin: 0 auto 20px;
   border-radius: 50%;
   background: linear-gradient(180deg, #ff6b6b 50%, white 50%);
-  border: 3px solid #333;
+  border: 3px solid #333333;
   position: relative;
   animation: spin 1s linear infinite;
 }
@@ -251,7 +251,7 @@ function capitalize(str) {
   width: 16px;
   height: 16px;
   background: white;
-  border: 3px solid #333;
+  border: 3px solid #333333;
   border-radius: 50%;
   transform: translate(-50%, -50%);
 }
@@ -267,7 +267,7 @@ function capitalize(str) {
 }
 
 .loading-text {
-  color: #666;
+  color: #333333;
   font-size: 1.1rem;
   font-weight: 500;
 }
@@ -280,6 +280,7 @@ function capitalize(str) {
   text-align: center;
   font-weight: 600;
   box-shadow: 0 8px 25px rgba(238, 90, 36, 0.3);
+  margin: 20px;
 }
 
 .pokemon-card {
@@ -290,12 +291,8 @@ function capitalize(str) {
   transition: transform 0.3s ease;
 }
 
-.pokemon-card:hover {
-  transform: translateY(-5px);
-}
-
 .pokemon-header {
-  padding: 30px 20px;
+  padding: 25px 20px;
   text-align: center;
   color: white;
   position: relative;
@@ -406,7 +403,7 @@ function capitalize(str) {
 }
 
 .pokemon-name {
-  font-size: 2.5rem;
+  font-size: 2rem;
   font-weight: bold;
   margin: 10px 0;
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
@@ -420,9 +417,9 @@ function capitalize(str) {
 }
 
 .type-badge {
-  padding: 8px 16px;
+  padding: 6px 14px;
   border-radius: 20px;
-  font-size: 0.9rem;
+  font-size: 0.85rem;
   font-weight: 600;
   background: rgba(255, 255, 255, 0.2);
   backdrop-filter: blur(10px);
@@ -430,14 +427,14 @@ function capitalize(str) {
 }
 
 .pokemon-content {
-  padding: 30px;
+  padding: 25px;
 }
 
 .pokemon-showcase {
   display: flex;
   align-items: center;
-  gap: 40px;
-  margin-bottom: 30px;
+  gap: 30px;
+  margin-bottom: 25px;
   flex-wrap: wrap;
   justify-content: center;
 }
@@ -450,8 +447,8 @@ function capitalize(str) {
 }
 
 .pokemon-image {
-  width: 200px;
-  height: 200px;
+  width: 150px;
+  height: 150px;
   image-rendering: pixelated;
   filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.2));
   animation: bounce 2s ease-in-out infinite;
@@ -498,36 +495,37 @@ function capitalize(str) {
 .basic-stats {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 15px;
 }
 
 .stat-item {
   display: flex;
   align-items: center;
-  gap: 12px;
-  padding: 15px 20px;
+  gap: 10px;
+  padding: 12px 16px;
   background: linear-gradient(135deg, #f8f9fa, #e9ecef);
   border-radius: 15px;
-  min-width: 180px;
+  min-width: 160px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
 }
 
 .stat-item i {
   color: #667eea;
-  width: 20px;
+  width: 18px;
   text-align: center;
 }
 
 .stat-label {
   color: #666;
   font-weight: 500;
+  font-size: 0.9rem;
 }
 
 .stat-value {
   margin-left: auto;
   font-weight: bold;
   color: #333;
-  font-size: 1.1rem;
+  font-size: 1rem;
 }
 
 /* Section styles */
@@ -535,10 +533,10 @@ function capitalize(str) {
   display: flex;
   align-items: center;
   gap: 10px;
-  font-size: 1.3rem;
+  font-size: 1.2rem;
   color: #333;
-  margin-bottom: 20px;
-  padding-bottom: 10px;
+  margin-bottom: 18px;
+  padding-bottom: 8px;
   border-bottom: 2px solid #e9ecef;
 }
 
@@ -548,24 +546,25 @@ function capitalize(str) {
 
 /* Abilities */
 .abilities-section {
-  margin-bottom: 30px;
+  margin-bottom: 25px;
 }
 
 .abilities-grid {
   display: flex;
-  gap: 15px;
+  gap: 12px;
   flex-wrap: wrap;
 }
 
 .ability-card {
-  padding: 12px 20px;
+  padding: 10px 18px;
   background: linear-gradient(135deg, #667eea, #764ba2);
   color: white;
-  border-radius: 25px;
+  border-radius: 20px;
   font-weight: 600;
   position: relative;
   box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
   transition: transform 0.3s ease;
+  font-size: 0.9rem;
 }
 
 .ability-card:hover {
@@ -598,25 +597,25 @@ function capitalize(str) {
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
-  gap: 15px;
-  margin-bottom: 20px;
+  gap: 12px;
+  margin-bottom: 18px;
 }
 
 .evolution-stage {
   display: flex;
   align-items: center;
-  gap: 15px;
+  gap: 12px;
 }
 
 .evolution-pokemon {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 10px;
-  padding: 20px;
+  gap: 8px;
+  padding: 16px;
   background: #f8f9fa;
-  border-radius: 15px;
-  min-width: 120px;
+  border-radius: 12px;
+  min-width: 100px;
   transition: all 0.3s ease;
   border: 2px solid transparent;
 }
@@ -625,12 +624,12 @@ function capitalize(str) {
   background: linear-gradient(135deg, #667eea, #764ba2);
   color: white;
   border-color: #667eea;
-  box-shadow: 0 8px 25px rgba(102, 126, 234, 0.3);
+  box-shadow: 0 6px 20px rgba(102, 126, 234, 0.3);
 }
 
 .evolution-number {
-  width: 30px;
-  height: 30px;
+  width: 26px;
+  height: 26px;
   border-radius: 50%;
   background: #667eea;
   color: white;
@@ -638,7 +637,7 @@ function capitalize(str) {
   align-items: center;
   justify-content: center;
   font-weight: bold;
-  font-size: 0.9rem;
+  font-size: 0.8rem;
 }
 
 .evolution-pokemon.current .evolution-number {
@@ -649,22 +648,24 @@ function capitalize(str) {
 .evolution-name {
   font-weight: 600;
   text-align: center;
+  font-size: 0.9rem;
 }
 
 .evolution-arrow {
   color: #667eea;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
 }
 
 .evolution-status {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 10px;
-  padding: 15px;
+  gap: 8px;
+  padding: 12px;
   background: linear-gradient(135deg, #f8f9fa, #e9ecef);
-  border-radius: 15px;
+  border-radius: 12px;
   font-weight: 500;
+  font-size: 0.9rem;
 }
 
 .evolution-status i.fa-check-circle {
@@ -679,18 +680,19 @@ function capitalize(str) {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 10px;
-  padding: 20px;
+  gap: 8px;
+  padding: 16px;
   background: linear-gradient(135deg, #fdcb6e, #f39c12);
   color: white;
-  border-radius: 15px;
+  border-radius: 12px;
   font-weight: 600;
-  margin-top: 20px;
+  margin-top: 18px;
+  font-size: 0.9rem;
 }
 
 @media (max-width: 768px) {
   .pokemon-details-container {
-    padding: 15px;
+    max-width: 100%;
   }
 
   .pokemon-showcase {
@@ -699,7 +701,7 @@ function capitalize(str) {
   }
 
   .pokemon-name {
-    font-size: 2rem;
+    font-size: 1.8rem;
   }
 
   .abilities-grid {
@@ -713,20 +715,41 @@ function capitalize(str) {
   .evolution-arrow {
     transform: rotate(90deg);
   }
+
+  .navbar-spacer {
+    width: 100px;
+  }
 }
 
 @media (max-width: 480px) {
   .pokemon-image {
-    width: 150px;
-    height: 150px;
+    width: 120px;
+    height: 120px;
   }
 
   .pokemon-name {
-    font-size: 1.8rem;
+    font-size: 1.6rem;
   }
 
   .basic-stats {
     align-items: center;
+  }
+
+  .navbar {
+    padding: 12px 15px;
+  }
+
+  .navbar-title {
+    font-size: 1.3rem;
+  }
+
+  .back-button {
+    font-size: 0.8rem;
+    padding: 6px 12px;
+  }
+
+  .navbar-spacer {
+    width: 80px;
   }
 }
 </style>
