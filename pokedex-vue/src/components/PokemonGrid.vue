@@ -9,11 +9,13 @@
 </template>
 
 <script setup>
-import PokemonCard from './PokemonCard.vue'
+import PokemonCard from "./PokemonCard.vue";
 
-defineProps({
-  pokemons: Array
-})
+const props = defineProps({
+  pokemons: Array,
+});
+
+console.log(props.pokemons);
 </script>
 
 <style scoped>
