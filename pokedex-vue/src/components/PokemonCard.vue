@@ -1,12 +1,12 @@
 <template>
-  <div class="pokemon-card" :class="`type-${decidePrimaryType(pokemon.types)}`">
+  <div class="pokemon-card" :class="`type-${decidePrimaryType(pokemon.types)}`" @click="goToDetails">
     <img :src="pokemon.sprites.front_default" :alt="pokemon.name" />
     <h3>{{ capitalize(pokemon.name) }}</h3>
     <p>
       Type:
       <span> {{ prepareTypes(pokemon.types) }}</span>
     </p>
-    <button class="favorite-btn" @click="toggleFavorite(pokemon)">
+    <button class="favorite-btn" @click.stop="toggleFavorite(pokemon)">
       <i :class="isFavorite ? 'fas fa-heart' : 'far fa-heart'"></i>
     </button>
   </div>
@@ -14,18 +14,24 @@
 
 <script setup>
 import { ref, onMounted } from "vue";
+import { useRouter } from "vue-router";
 
 const props = defineProps({
   pokemon: Object,
 });
 
 const isFavorite = ref(false);
+const router = useRouter();
 
 // Check localStorage on component mount to set initial favorite status
 onMounted(() => {
   const favorites = JSON.parse(localStorage.getItem("favorite-pokemons")) || [];
   isFavorite.value = favorites.includes(props.pokemon.id);
 });
+
+function goToDetails() {
+  router.push({ name: "PokemonDetails", params: { id: props.pokemon.id } });
+}
 
 function toggleFavorite(pokemon) {
   isFavorite.value = !isFavorite.value;
@@ -85,54 +91,71 @@ function capitalize(str) {
 .pokemon-card.type-normal {
   background: linear-gradient(135deg, #a8a77a, #c6c6a7);
 }
+
 .pokemon-card.type-fire {
   background: linear-gradient(135deg, #ee8130, #f5ac78);
 }
+
 .pokemon-card.type-water {
   background: linear-gradient(135deg, #6390f0, #9db7f5);
 }
+
 .pokemon-card.type-electric {
   background: linear-gradient(135deg, #f7d02c, #fae078);
 }
+
 .pokemon-card.type-grass {
   background: linear-gradient(135deg, #7ac74c, #a7db8d);
 }
+
 .pokemon-card.type-ice {
   background: linear-gradient(135deg, #96d9d6, #bce6e6);
 }
+
 .pokemon-card.type-fighting {
   background: linear-gradient(135deg, #c22e28, #d67873);
 }
+
 .pokemon-card.type-poison {
   background: linear-gradient(135deg, #a33ea1, #c183c1);
 }
+
 .pokemon-card.type-ground {
   background: linear-gradient(135deg, #e2bf65, #ebd69d);
 }
+
 .pokemon-card.type-flying {
   background: linear-gradient(135deg, #a98ff3, #c6b7f5);
 }
+
 .pokemon-card.type-psychic {
   background: linear-gradient(135deg, #f95587, #fa92b2);
 }
+
 .pokemon-card.type-bug {
   background: linear-gradient(135deg, #a6b91a, #c6d16e);
 }
+
 .pokemon-card.type-rock {
   background: linear-gradient(135deg, #b6a136, #d1c17d);
 }
+
 .pokemon-card.type-ghost {
   background: linear-gradient(135deg, #735797, #a292bc);
 }
+
 .pokemon-card.type-dragon {
   background: linear-gradient(135deg, #6f35fc, #a27dfa);
 }
+
 .pokemon-card.type-dark {
   background: linear-gradient(135deg, #705746, #a29288);
 }
+
 .pokemon-card.type-steel {
   background: linear-gradient(135deg, #b7b7ce, #d1d1e0);
 }
+
 .pokemon-card.type-fairy {
   background: linear-gradient(135deg, #d685ad, #f4bdc9);
 }

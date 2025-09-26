@@ -1,82 +1,19 @@
 <template>
-  <div v-if="loading" class="loading">
-    <i class="fas fa-spinner fa-spin"></i> Loading...
-  </div>
-  <div v-else class="app-container">
-    <h1><i class="fas fa-circle-notch"></i> Pokédex</h1>
-    <p>Gotta Fetch 'Em All!</p>
+  <div id="app">
+    <header class="app-header">
+      <h1><i class="fas fa-circle-notch"></i> Pokédex</h1>
+      <p>Gotta Fetch 'Em All!</p>
+    </header>
 
-    <div>
-      <input
-        v-model="searchQuery"
-        type="text"
-        placeholder="Enter Pokémon name or ID"
-      />
-      <button @click="searchPokemon">
-        <i class="fas fa-magnifying-glass"></i> Search
-      </button>
-      <button @click="resetSearch">
-        <i class="fas fa-rotate-right"></i> Reset
-      </button>
-    </div>
-
-    <div v-if="error" style="color: red; margin-top: 15px">{{ error }}</div>
-
-    <PokemonGrid v-if="pokemons.length > 0" :pokemons="pokemons" />
+    <main>
+      <router-view />
+    </main>
   </div>
 </template>
 
-<script setup>
-import { ref, onMounted } from "vue";
-import PokemonGrid from "./components/PokemonGrid.vue";
+<script setup></script>
 
-const pokemons = ref([]);
-const searchQuery = ref("");
-const error = ref("");
-const loading = ref(false);
-
-async function searchPokemon() {
-  const query = searchQuery.value.trim().toLowerCase();
-  if (!query) {
-    error.value = "Please enter a Pokémon name or ID";
-    return;
-  }
-  error.value = "";
-  try {
-    const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${query}`);
-    if (!response.ok) {
-      throw new Error("Not found");
-    }
-    const pokemon = await response.json();
-    pokemons.value = [pokemon];
-  } catch {
-    error.value = "Pokémon not found";
-    pokemons.value = [];
-  }
-}
-
-const fetchInitialPokemons = async () => {
-  const promises = [];
-  loading.value = true;
-
-  for (let i = 1; i <= 50; i++) {
-    promises.push(
-      fetch(`https://pokeapi.co/api/v2/pokemon/${i}`).then((res) => res.json())
-    );
-  }
-  pokemons.value = await Promise.all(promises);
-
-  loading.value = false;
-};
-
-onMounted(() => {
-  fetchInitialPokemons();
-});
-
-function resetSearch() {
-  searchQuery.value = "";
-  pokemons.value = [];
-  error.value = "";
-  fetchInitialPokemons();
-}
-</script>
+<style>
+.app-header { text-align: center; padding: 20px; }
+main { padding: 0 20px 40px; }
+</style>

@@ -11,18 +11,7 @@
 <script setup>
 import PokemonCard from "./PokemonCard.vue";
 
-const props = defineProps({
+defineProps({
   pokemons: Array,
 });
-
-console.log(props.pokemons);
 </script>
-
-<style scoped>
-.pokemon-grid {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  margin-top: 20px;
-}
-</style>
