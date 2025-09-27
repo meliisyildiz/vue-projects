@@ -1,0 +1,132 @@
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: radial-gradient(circle at top, #0d1b2a, #000);
+  color: #f1f1f1;
+  min-height: 100vh;
+}
+
+/* Navbar and footer */
+.navbar {
+  background: #111827;
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar h1 {
+  color: #42b983;
+}
+
+.navbar a {
+  color: #e5e7eb;
+  margin-left: 1rem;
+  text-decoration: none;
+  padding: 0.7rem 1.5rem;
+  border-radius: 12px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+
+.navbar a:hover {
+  color: #42b983;
+  background: rgba(66, 185, 131, 0.1);
+}
+
+.footer {
+  margin-top: 2rem;
+  padding: 1rem;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  background: #111827;
+  color: #9ca3af;
+}
+
+/* Home view */
+.home {
+  padding: 1rem 2rem;
+}
+
+.home-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.home h2 {
+  margin: 0;
+  color: #42b983;
+}
+
+.search-input {
+  padding: 0.5rem 1rem;
+  border-radius: 15px;
+  border: 1px solid #374151;
+  outline: none;
+  width: 200px;
+  background: #374151;
+  color: #f1f1f1;
+  font-size: 0.85rem;
+}
+
+.search-input::placeholder {
+  color: #9ca3af;
+}
+
+.search-input:focus {
+  border-color: #42b983;
+  box-shadow: 0 0 8px rgba(66, 185, 131, 0.2);
+}
+
+/* Character cards */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 1rem;
+}
+
+.card {
+  background: #1f2937;
+  border-radius: 12px;
+  padding: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+}
+
+.card:hover {
+  transform: translateY(-8px) scale(1.02);
+  border: 2px solid #42b983;
+  box-shadow: 0 15px 35px rgba(66, 185, 131, 0.2);
+  background: #253142;
+}
+.card img {
+  width: 100%;
+  border-radius: 8px;
+}
+
+/* Character details */
+.details {
+  display: flex;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.details-card {
+  background: #1f2937;
+  padding: 2rem;
+  border-radius: 12px;
+  max-width: 400px;
+  text-align: center;
+}
+
+.details-card img {
+  width: 200px;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+}
