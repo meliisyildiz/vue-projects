@@ -3,7 +3,7 @@
     <header class="navbar">
       <h1>Rick & Morty Explorer 🚀⋆⭒˚⋆🔭</h1>
       <nav>
-        <router-link to="/">🛰️Home</router-link>
+        <router-link to="/">Home</router-link>
       </nav>
     </header>
 
